@@ -60,5 +60,3 @@ spec:
       targetPort: http-prometheus
   selector:
     app: prometheus
-  sessionAffinity: None
-  type: LoadBalancer
