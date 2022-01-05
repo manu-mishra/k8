@@ -1,12 +1,12 @@
-apiVersion: v1
- kind: PersistentVolumeClaim
- metadata: 
+apiVersion: apps/v1 
+kind: Deployment
+metadata: 
    name: pvc-grafana
    labels:
      name: pvcgrafana
- spec:
+spec:
    accessModes:
      - ReadWriteOnce
- resources:
-   requests:
-     storage: 5Gi
+   resources:
+     requests:
+       storage: 5Gi

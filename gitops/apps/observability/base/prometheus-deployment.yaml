@@ -1,29 +1,32 @@
 apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    name: prometheus-deployment
-  spec:
+kind: Deployment
+metadata:
+    name: grafana
+    labels: 
+      app: grafana
+      tier: deploy
+spec:
     replicas: 1
     selector:
       matchLabels: 
-        tier: monitor
+        tier: monitoring
     template:
       metadata:
         labels:
-          tier: monitor
+          tier: monitoring
       spec:
         containers:
-        - name: prometheus
-          image: prom/prometheus
+        - name: grafana-container
+          image: grafana/grafana:latest
 
           ports:
-          - containerPort: 9090
+          - containerPort: 3000
 
           volumeMounts:
-          - name: prometheus-volume
-            mountPath: /data
+          - name: grafana-volume
+            mountPath: /var/lib/grafana
 
-       volumes:
-       - name: prometheus-volume
-         persistentVolumeClaim:
-           claimName: pvc-prometheus
+        volumes:
+        - name: grafana-volume
+          persistentVolumeClaim:
+            claimName: pvc-grafana

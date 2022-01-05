@@ -1,10 +1,10 @@
 apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata: 
+kind: PersistentVolumeClaim
+metadata: 
     name: pvc-prometheus
     labels:
       name: pvcprometheus
-  spec:    
+spec:    
     accessModes:
     - ReadWriteOnce
     resources:
