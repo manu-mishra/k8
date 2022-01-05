@@ -1,9 +1,9 @@
 {
-  "appName": "observability",
-  "userGivenName": "observability",
+  "appName": "grafana",
+  "userGivenName": "grafana",
   "destNamespace": "development",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "gitops/apps/observability/overlays/development",
+  "srcPath": "gitops/apps/grafana/overlays/development",
   "srcRepoURL": "https://github.com/manu-mishra/k8.git",
   "srcTargetRevision": "",
   "labels": "3"
