@@ -1,1 +1,10 @@
-{"appName":"app1","userGivenName":"app1","destNamespace":"development","destServer":"https://kubernetes.default.svc","srcPath":"gitops/apps/app1/overlays/development","srcRepoURL":"https://github.com/manu-mishra/k8.git","srcTargetRevision":"","labels":null}
+{
+  "appName": "app1",
+  "userGivenName": "app1-development",
+  "destNamespace": "development",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "gitops/apps/app1/overlays/development",
+  "srcRepoURL": "https://github.com/manu-mishra/k8.git",
+  "srcTargetRevision": "",
+  "labels": null
+}
