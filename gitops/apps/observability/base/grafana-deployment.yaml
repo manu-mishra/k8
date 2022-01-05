@@ -5,28 +5,28 @@ metadata:
   labels: 
       app: grafana
       tier: deploy
-  spec:
-    replicas: 1
-    selector:
-      matchLabels: 
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      tier: monitoring
+  template:
+    metadata:
+      labels:
         tier: monitoring
-    template:
-      metadata:
-        labels:
-          tier: monitoring
-      spec:
-        containers:
-        - name: grafana-container
-          image: grafana/grafana:latest
+    spec:
+      containers:
+      - name: grafana-container
+        image: grafana/grafana:latest
 
-          ports:
-          - containerPort: 3000
+        ports:
+        - containerPort: 3000
 
-          volumeMounts:
-          - name: grafana-volume
-            mountPath: /var/lib/grafana
-
-        volumes:
+        volumeMounts:
         - name: grafana-volume
-          persistentVolumeClaim:
-            claimName: pvc-grafana
+          mountPath: /var/lib/grafana
+
+      volumes:
+      - name: grafana-volume
+        persistentVolumeClaim:
+          claimName: pvc-grafana
