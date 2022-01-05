@@ -1,6 +1,6 @@
 {
   "appName": "app1",
-  "userGivenName": "app1-production",
+  "userGivenName": "app1",
   "destNamespace": "production",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "gitops/apps/app1/overlays/production",
