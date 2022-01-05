@@ -1,0 +1,10 @@
+{
+  "appName": "prometheus",
+  "userGivenName": "prometheus",
+  "destNamespace": "development",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "gitops/apps/app1/overlays/development",
+  "srcRepoURL": "https://github.com/manu-mishra/k8.git",
+  "srcTargetRevision": "",
+  "labels": "3"
+}
