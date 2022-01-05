@@ -3,7 +3,7 @@
   "userGivenName": "observability",
   "destNamespace": "development",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "gitops/apps/app1/observability/development",
+  "srcPath": "gitops/apps/observability/overlays/development",
   "srcRepoURL": "https://github.com/manu-mishra/k8.git",
   "srcTargetRevision": "",
   "labels": "3"
