@@ -3,7 +3,7 @@
   "userGivenName": "istio",
   "destNamespace": "istio-system",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "gitops/apps/istio/overlays/stage",
+  "srcPath": "gitops/apps/istio/overlays/default",
   "srcRepoURL": "https://github.com/manu-mishra/k8.git",
   "srcTargetRevision": "",
   "labels": "3"
