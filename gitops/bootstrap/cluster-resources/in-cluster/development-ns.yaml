@@ -5,5 +5,8 @@ metadata:
     argocd.argoproj.io/sync-options: Prune=false
   creationTimestamp: null
   name: development
+  labels:
+    name: "development"
+    istio-injection: "enabled"
 spec: {}
 status: {}
