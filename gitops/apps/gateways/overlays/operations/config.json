@@ -1,7 +1,7 @@
 {
   "appName": "app1",
   "userGivenName": "app1",
-  "destNamespace": "stage",
+  "destNamespace": "default",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "gitops/apps/gateways/overlays/operations",
   "srcRepoURL": "https://github.com/manu-mishra/k8.git",
