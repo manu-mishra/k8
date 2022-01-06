@@ -22,8 +22,8 @@ helm upgrade metrics-server --install \
 --set extraArgs.kubelet-preferred-address-types=InternalIP \
 bitnami/metrics-server --namespace kube-system
 
-istioctl install -f install-istio.yaml -y
+#istioctl install -f install-istio.yaml -y
 
-../autopilot/recover-from-repo.recover.sh
+../autopilot/recover-from-repo/recover.sh
 sleep 30
 ./private-container-image-registry.sh
