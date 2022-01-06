@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  repositories: |
+    - url: https://github.com/helm/charts.git
+  repository.credentials: |
+    - url: https://github.com/
+      passwordSecret:
+        name: git_token
+        key: autopilot-secret
+      usernameSecret:
+        name: git_username
+        key: autopilot-secret
