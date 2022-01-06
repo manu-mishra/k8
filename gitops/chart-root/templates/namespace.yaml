@@ -1,5 +1,12 @@
----
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: charts-ns
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=true
+  creationTimestamp: null
+  name: istio-ingress
+  labels:
+    name: "istio-ingress"
+    istio-injection: "enabled"
+spec: {}
+status: {}
