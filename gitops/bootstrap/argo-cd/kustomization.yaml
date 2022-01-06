@@ -12,14 +12,14 @@ configMapGenerator:
         name: autopilot-secret
   - |
     repositories=- type: helm
-       name: helmstable
-       url: https://charts.helm.sh/stable
-     - type: helm
-       name: argo-cd
-       url: https://argoproj.github.io/argo-helm
-     - type: helm
-       name: dapr
-       url: https://dapr.github.io/helm-charts/
+      name: helmstable
+      url: https://charts.helm.sh/stable
+    - type: helm
+      name: argo-cd
+      url: https://argoproj.github.io/argo-helm
+    - type: helm
+      name: dapr
+      url: https://dapr.github.io/helm-charts/
   name: argocd-cm
 kind: Kustomization
 namespace: argocd
