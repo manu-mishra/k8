@@ -10,8 +10,6 @@ configMapGenerator:
       usernameSecret:
         key: git_username
         name: autopilot-secret
-    repositories: |
-      - url: https://github.com/helm/charts.git
   name: argocd-cm
 kind: Kustomization
 namespace: argocd
