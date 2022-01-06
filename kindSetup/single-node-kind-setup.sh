@@ -10,7 +10,7 @@ kind create cluster --config=single-node.yaml --name dev1
 kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
 kubectl apply -f ./calico-config.yaml
 
-sleep 120
+sleep 60
 
 # Metrics Server
 kubectl config set-context --current --namespace kube-system
