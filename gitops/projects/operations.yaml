@@ -98,7 +98,7 @@ status: {}
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster-addons
+  name: service-mesh
 spec:
   generators:
   - git:
@@ -114,6 +114,5 @@ spec:
       source:
         repoURL: https://github.com/argoproj/applicationset.git
         targetRevision: HEAD
-        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
