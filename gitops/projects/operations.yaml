@@ -112,7 +112,8 @@ spec:
     spec:
       project: operations
       source:
-        repoURL: https://github.com/argoproj/applicationset.git
+        repoURL: https://github.com/manu-mishra/k8.git
         targetRevision: HEAD
       destination:
         server: https://kubernetes.default.svc
+
