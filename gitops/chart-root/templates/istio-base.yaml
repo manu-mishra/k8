@@ -15,4 +15,18 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: istio-system
   syncPolicy:
-    automated: {}
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - allowEmpty=true
+status:
+  health: {}
+  summary: {}
+  sync:
+    comparedTo:
+      destination: {}
+      source:
+        repoURL: ""
+    status: ""

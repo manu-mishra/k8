@@ -8,7 +8,6 @@ metadata:
     app.kubernetes.io/managed-by: argocd-autopilot
     app.kubernetes.io/name: chart-root
   name: chart-root
-  namespace: argocd
 spec:
   destination:
     namespace: argocd
