@@ -98,7 +98,7 @@ status: {}
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: service-mesh
+  name: cluster-addons
 spec:
   generators:
   - git:
@@ -114,6 +114,8 @@ spec:
       source:
         repoURL: https://github.com/manu-mishra/k8.git
         targetRevision: HEAD
+        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
+        namespace: '{{path.basename}}'
 
