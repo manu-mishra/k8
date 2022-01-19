@@ -1,4 +1,4 @@
-#spec:
-#  destination:
-#    server: https://kubernetes.default.svc
-#    namespace: istio-system
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-system
