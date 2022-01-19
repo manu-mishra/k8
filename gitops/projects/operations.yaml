@@ -98,14 +98,14 @@ status: {}
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster-addons
+  name: istio-addOns
 spec:
   generators:
   - git:
       repoURL: https://github.com/manu-mishra/k8.git
       revision: HEAD
       directories:
-      - path: gitops/chart-apps/*
+      - path: gitops/istio/*
   template:
     metadata:
       name: '{{path.basename}}'
@@ -117,6 +117,7 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
+        namespace: istio-system
       syncPolicy:
         automated:
           allowEmpty: true
