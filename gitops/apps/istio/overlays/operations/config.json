@@ -1,7 +1,7 @@
 {
-  "appName": "istio",
-  "userGivenName": "istio",
-  "destNamespace": "operations",
+  "appName": "istio-base",
+  "userGivenName": "istio-base",
+  "destNamespace": "istio-system",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "gitops/apps/istio/overlays/operations",
   "srcRepoURL": "https://github.com/manu-mishra/k8.git",
