@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
+  creationTimestamp: null
+  name: ingress
+  labels:
+    name: "ingress"
+    istio-injection: "enabled"
+spec: {}
+status: {}

@@ -123,3 +123,34 @@ spec:
           allowEmpty: true
           prune: true
           selfHeal: true
+
+---
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: ingress
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/manu-mishra/k8.git
+      revision: HEAD
+      directories:
+      - path: gitops/ingress/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: operations
+      source:
+        repoURL: https://github.com/manu-mishra/k8.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: ingress
+      syncPolicy:
+        automated:
+          allowEmpty: true
+          prune: true
+          selfHeal: true
