@@ -117,4 +117,8 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-
+      syncPolicy:
+        automated:
+          allowEmpty: true
+          prune: true
+          selfHeal: true
