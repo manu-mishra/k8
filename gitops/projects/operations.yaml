@@ -28,7 +28,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "-5"
   creationTimestamp: null
   name: operations
   namespace: argocd
@@ -98,6 +98,8 @@ status: {}
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-10"
   name: istioservicemesh
 spec:
   generators:
