@@ -7,8 +7,8 @@ spec:
     istio: ingressgateway # use istio default controller
   servers:
   - port:
-      number: 80
-      name: http
+      number: 443
+      name: https
       protocol: HTTP
     hosts:
     - argocd.kube
@@ -27,4 +27,4 @@ spec:
         - destination:
             host: argocd-server.argocd.svc.cluster.local
             port:
-              number: 80
+              number: 443
