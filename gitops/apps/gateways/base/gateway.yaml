@@ -1,30 +1,30 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: argocd-gateway
+  name: app1-gateway
 spec:
   selector:
     istio: ingressgateway # use istio default controller
   servers:
   - port:
-      number: 443
-      name: https
+      number: 80
+      name: http
       protocol: HTTP
     hosts:
-    - argocd.kube
+    - app1.prod
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: argocd-virtual-service
+  name: app1-virtual-service
 spec:
   hosts:
-  - argocd.kube
+  - app1.prod
   gateways:
-    - argocd-gateway
+    - app1-gateway
   http:
     - route:
         - destination:
-            host: argocd-server.argocd.svc.cluster.local
+            host: production.app1.svc.cluster.local
             port:
-              number: 443
+              number: 80
