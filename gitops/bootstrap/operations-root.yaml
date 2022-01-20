@@ -8,8 +8,8 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
   labels:
     app.kubernetes.io/managed-by: argocd-autopilot
-    app.kubernetes.io/name: root
-  name: root
+    app.kubernetes.io/name: operations-root
+  name: operations-root
   namespace: argocd
 spec:
   destination:
@@ -22,7 +22,7 @@ spec:
     kind: Application
   project: default
   source:
-    path: gitops/projects
+    path: gitops/operations/operations-root
     repoURL: https://github.com/manu-mishra/k8.git
   syncPolicy:
     automated:
