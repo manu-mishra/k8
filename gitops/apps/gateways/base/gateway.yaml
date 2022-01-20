@@ -23,6 +23,9 @@ spec:
   gateways:
     - app1-gateway
   http:
+    - match:
+      - uri:
+        prefix: /
     - route:
         - destination:
             host: production.app1.svc.cluster.local
