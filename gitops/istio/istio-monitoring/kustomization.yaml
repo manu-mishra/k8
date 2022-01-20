@@ -4,3 +4,4 @@ resources:
   - ./prometheus.yaml
   - ./kiali.yaml
   - ./grafana.yaml
+  - ./zipkin.yaml
