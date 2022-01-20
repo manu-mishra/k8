@@ -1,0 +1,10 @@
+{
+  "appName": "app1",
+  "userGivenName": "gateways",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "gitops/apps/gateways/overlays/operations",
+  "srcRepoURL": "https://github.com/manu-mishra/k8.git",
+  "srcTargetRevision": "",
+  "labels": "3"
+}
