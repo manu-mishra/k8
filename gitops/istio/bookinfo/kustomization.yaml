@@ -1,5 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - github.com/istio/istio/blob/master/samples/bookinfo/platform/kube/bookinfo.yaml
-  - github.com/istio/istio/blob/master/samples/bookinfo/networking/bookinfo-gateway.yaml
+  - ./bookinfo.yaml
+  - ./kiali.yaml
+  - ./grafana.yaml
+  - ./zipkin.yaml
