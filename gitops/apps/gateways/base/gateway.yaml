@@ -30,4 +30,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: app1.prod.svc.cluster.local
+        host: app1.production.svc.cluster.local
