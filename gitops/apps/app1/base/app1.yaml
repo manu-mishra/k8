@@ -62,7 +62,8 @@ metadata:
     service: app1
 spec:
   ports:
-    - port: 80
+    - name: http-app1
+      port: 80
       targetPort: 8080
       protocol: TCP
   selector:
