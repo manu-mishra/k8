@@ -4,7 +4,7 @@ metadata:
   name: argo-gateway
 spec:
   selector:
-    istio: istio-ingress # use Istio default gateway implementation
+    istio: ingress # use Istio default gateway implementation
   servers:
   - port:
       number: 80
