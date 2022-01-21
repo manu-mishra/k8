@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: httpbin-gateway
+  name: argo-gateway
 spec:
   selector:
     istio: ingressgateway # use Istio default gateway implementation
@@ -16,18 +16,13 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: httpbin
+  name: argo
 spec:
   hosts:
   - "*"
   gateways:
-  - httpbin-gateway
+  - argo-gateway
   http:
-  - match:
-    - uri:
-        prefix: /status
-    - uri:
-        prefix: /delay
     route:
     - destination:
         port:
