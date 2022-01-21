@@ -11,7 +11,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "/*"
+    - "*"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -25,9 +25,7 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /status
-    - uri:
-        prefix: /delay
+        prefix: /
     route:
     - destination:
         port:
