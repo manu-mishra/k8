@@ -4,9 +4,9 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
   creationTimestamp: null
-  name: ingress
+  name: istio-ingress
   labels:
-    name: "ingress"
+    name: "istio-ingress"
     istio-injection: "enabled"
 spec: {}
 status: {}
