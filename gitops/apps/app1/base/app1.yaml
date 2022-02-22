@@ -26,6 +26,10 @@ spec:
           env:
             - name: ASPNETCORE_URLS
               value: http://+:8080
+          volumeMounts:
+          - name: proxy-appsettings-volume
+            mountPath: /app/Settings
+
        -  name : app1-microservice1
           image: ghcr.io/manu-mishra/app1-microservice1:0.0.1657001816
           imagePullPolicy: Always
@@ -35,6 +39,7 @@ spec:
           env:
             - name: ASPNETCORE_URLS
               value: http://+:8081
+
        -  name : app1-microservice2
           image: ghcr.io/manu-mishra/app1-microservice2:0.0.1657001816
           imagePullPolicy: Always
@@ -44,6 +49,7 @@ spec:
           env:
             - name: ASPNETCORE_URLS
               value: http://+:8082
+
        -  name : app1-ui
           image: ghcr.io/manu-mishra/app1-ui:0.0.1648033523
           imagePullPolicy: Always
@@ -52,6 +58,10 @@ spec:
               protocol: TCP
       imagePullSecrets:
        -  name: private-repo-secret
+      volumes:
+      - name: proxy-appsettings-volume
+        configMap:
+          name: proxy-appsetting
 ---
 apiVersion: v1
 kind: Service
@@ -69,3 +79,52 @@ spec:
   selector:
     service: app1
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: proxy-appsetting
+data:
+  appsettings.json: |-
+    {
+      "Logging": 
+      {
+        "LogLevel": 
+        {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      },
+     "ReverseProxy": 
+     {
+       "Clusters": {
+         "microservice1": {
+           "Destinations": {
+             "destination1": {
+               "Address": "http://localhost:8081/"
+             }
+           }
+         },
+         "microservice2": {
+           "Destinations": {
+             "destination1": {
+               "Address": "http://localhost:8082/"
+             }
+           }
+         },
+         "UI": {
+           "Destinations": {
+             "destination1": {
+               "Address": "http://localhost:3000/"
+             }
+           }
+         },
+         "external": {
+           "Destinations": {
+             "destination1": {
+               "Address": "http://manumishra.com"
+             }
+           }
+         }
+       }
+     }
+    }
