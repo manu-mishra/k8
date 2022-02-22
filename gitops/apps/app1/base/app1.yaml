@@ -114,7 +114,7 @@ data:
          "UI": {
            "Destinations": {
              "destination1": {
-               "Address": "http://localhost:3000/"
+               "Address": "http://localhost:80/"
              }
            }
          },
