@@ -51,7 +51,7 @@ spec:
               value: http://+:8082
 
        -  name : app1-ui
-          image: ghcr.io/manu-mishra/app1-ui:0.0.1884274470
+          image: ghcr.io/manu-mishra/app1-ui:latest
           imagePullPolicy: Always
           ports:
            -  containerPort: 80
