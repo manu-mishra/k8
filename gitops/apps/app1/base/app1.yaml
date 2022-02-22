@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
        -  name : app1-proxy
-          image: ghcr.io/manu-mishra/app1-proxy:0.0.1884274470
+          image: ghcr.io/manu-mishra/app1-proxy:0.0.1884421602
           imagePullPolicy: Always
           ports:
            -  containerPort: 8080
@@ -31,7 +31,7 @@ spec:
             mountPath: /app/Settings
 
        -  name : app1-microservice1
-          image: ghcr.io/manu-mishra/app1-microservice1:0.0.1884274470
+          image: ghcr.io/manu-mishra/app1-microservice1:0.0.1884421602
           imagePullPolicy: Always
           ports:
            -  containerPort: 8081
@@ -41,7 +41,7 @@ spec:
               value: http://+:8081
 
        -  name : app1-microservice2
-          image: ghcr.io/manu-mishra/app1-microservice2:0.0.1884274470
+          image: ghcr.io/manu-mishra/app1-microservice2:0.0.1884421602
           imagePullPolicy: Always
           ports:
            -  containerPort: 8082
@@ -51,7 +51,7 @@ spec:
               value: http://+:8082
 
        -  name : app1-ui
-          image: ghcr.io/manu-mishra/app1-ui:latest
+          image: ghcr.io/manu-mishra/app1-ui:1884421602
           imagePullPolicy: Always
           ports:
            -  containerPort: 80
