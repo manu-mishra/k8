@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
        -  name : zero-proxy
-          image: ghcr.io/manu-mishra/zero-proxy:0.0.1884646030
+          image: ghcr.io/manu-mishra/zero-proxy:0.0.1888718140
           imagePullPolicy: Always
           ports:
            -  containerPort: 8081
@@ -29,13 +29,21 @@ spec:
           volumeMounts:
           - name: zero-proxy-appsettings-volume
             mountPath: /app/Settings
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "10m"
 
        -  name : zero-uishell
-          image: ghcr.io/manu-mishra/zero-uishell:0.0.1884646030
+          image: ghcr.io/manu-mishra/zero-uishell:0.0.1888718140
           imagePullPolicy: Always
           ports:
            -  containerPort: 80
               protocol: TCP
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "10m"
       imagePullSecrets:
        -  name: private-repo-secret
       volumes:
