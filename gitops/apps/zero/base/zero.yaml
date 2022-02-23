@@ -53,16 +53,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: app1
+  name: zero
   labels:
-    app: app1
-    service: app1
+    app: zero
+    service: zero
 spec:
   ports:
-    - name: http-app1
+    - name: http-zero
       port: 80
-      targetPort: 8080
+      targetPort: 8081
       protocol: TCP
   selector:
-    service: app1
+    service: zero
 ---
