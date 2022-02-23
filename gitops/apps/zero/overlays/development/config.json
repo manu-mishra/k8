@@ -1,0 +1,10 @@
+{
+  "appName": "zero",
+  "userGivenName": "zero",
+  "destNamespace": "development",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "gitops/apps/zero/overlays/development",
+  "srcRepoURL": "https://github.com/manu-mishra/k8.git",
+  "srcTargetRevision": "",
+  "labels": "3"
+}

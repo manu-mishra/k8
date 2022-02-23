@@ -1,0 +1,68 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zero
+  labels:
+    app: zero
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: zero
+  template:
+    metadata:
+      labels:
+        app: zero
+        service: appzero1
+    spec:
+      containers:
+       -  name : zero-proxy
+          image: ghcr.io/manu-mishra/zero-proxy:0.0.1884646030
+          imagePullPolicy: Always
+          ports:
+           -  containerPort: 8081
+              protocol: TCP
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:8081
+          volumeMounts:
+          - name: proxy-appsettings-volume
+            mountPath: /app/Settings
+
+       -  name : zero-uibranding
+          image: ghcr.io/manu-mishra/zero-uibranding:0.0.1884595435
+          imagePullPolicy: Always
+          ports:
+           -  containerPort: 8080
+              protocol: TCP
+
+       -  name : zero-uishell
+          image: ghcr.io/manu-mishra/zero-uishell:0.0.1884646030
+          imagePullPolicy: Always
+          ports:
+           -  containerPort: 80
+              protocol: TCP
+      imagePullSecrets:
+       -  name: private-repo-secret
+      volumes:
+      - name: proxy-appsettings-volume
+        configMap:
+          name: zero-proxy-appsetting
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app1
+  labels:
+    app: app1
+    service: app1
+spec:
+  ports:
+    - name: http-app1
+      port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    service: app1
+---
