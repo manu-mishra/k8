@@ -15,6 +15,7 @@ spec:
       labels:
         app: zero
         service: zero
+        version: zero
     spec:
       containers:
        -  name : zero-proxy
