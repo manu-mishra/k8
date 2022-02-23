@@ -30,13 +30,6 @@ spec:
           - name: zero-proxy-appsettings-volume
             mountPath: /app/Settings
 
-       -  name : zero-uibranding
-          image: ghcr.io/manu-mishra/zero-uibranding:0.0.1884595435
-          imagePullPolicy: Always
-          ports:
-           -  containerPort: 8080
-              protocol: TCP
-
        -  name : zero-uishell
           image: ghcr.io/manu-mishra/zero-uishell:0.0.1884646030
           imagePullPolicy: Always

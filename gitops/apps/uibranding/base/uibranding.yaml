@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uibranding
+  labels:
+    app: uibranding
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: uibranding
+  template:
+    metadata:
+      labels:
+        app: uibranding
+        service: uibranding
+    spec:
+      containers:
+       -  name : zero-uibranding
+          image: ghcr.io/manu-mishra/zero-uibranding:0.0.1884595435
+          imagePullPolicy: Always
+          ports:
+           -  containerPort: 80
+              protocol: TCP
+
+      imagePullSecrets:
+       -  name: private-repo-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uibranding
+  labels:
+    app: uibranding
+    service: uibranding
+spec:
+  ports:
+    - name: http-uibranding
+      port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    service: uibranding
