@@ -66,3 +66,19 @@ spec:
   selector:
     service: zero
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: zero-proxy-appsetting
+data:
+  appsettings.json: |-
+    {
+      "Logging": 
+      {
+        "LogLevel": 
+        {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      }
+    }
