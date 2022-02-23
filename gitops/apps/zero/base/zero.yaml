@@ -27,7 +27,7 @@ spec:
             - name: ASPNETCORE_URLS
               value: http://+:8081
           volumeMounts:
-          - name: proxy-appsettings-volume
+          - name: zero-proxy-appsettings-volume
             mountPath: /app/Settings
 
        -  name : zero-uibranding
@@ -46,7 +46,7 @@ spec:
       imagePullSecrets:
        -  name: private-repo-secret
       volumes:
-      - name: proxy-appsettings-volume
+      - name: zero-proxy-appsettings-volume
         configMap:
           name: zero-proxy-appsetting
 ---
