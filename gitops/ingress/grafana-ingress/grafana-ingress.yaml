@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: grafana-gateway
+spec:
+  selector:
+    istio: ingress # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "grafana.prod"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: zero
+spec:
+  hosts:
+  - "grafana.prod"
+  gateways:
+  - grafana-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        port:
+          number: 3000
+        host: grafana.istio-system.svc.cluster.local
