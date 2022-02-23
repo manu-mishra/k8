@@ -14,6 +14,6 @@ vars:
     name: demo-configmap-parameters
     apiVersion: v1
   fieldref:
-    fieldpath: data.appsettings.json
+    fieldpath: data.Aplication1Address
 configurations:
 - params.yaml 
