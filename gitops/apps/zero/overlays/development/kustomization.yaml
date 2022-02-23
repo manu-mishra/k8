@@ -8,7 +8,7 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 vars:
-- name: foo
+- name: Aplication1Address
   objref:
     kind: ConfigMap
     name: demo-configmap-parameters
