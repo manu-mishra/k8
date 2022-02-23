@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: app1-gateway
+  name: zero-gateway
 spec:
   selector:
     istio: ingress # use Istio default gateway implementation
@@ -15,7 +15,7 @@ spec:
       name: https
       protocol: HTTPS
     hosts:
-    - "app1.prod"
+    - "zero.prod"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -23,9 +23,9 @@ metadata:
   name: app1
 spec:
   hosts:
-  - "app1.prod"
+  - "zero.prod"
   gateways:
-  - app1-gateway
+  - zero-gateway
   http:
   - match:
     - uri:
@@ -34,4 +34,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: app1.production.svc.cluster.local
+        host: zero.development.svc.cluster.local
