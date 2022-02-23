@@ -53,7 +53,7 @@ data:
           "application1": {
             "Destinations": {
               "destination1": {
-                "Address": "http://development.app1/"
+                "Address": "$(Aplication1Address)"
               }
             }
           },
