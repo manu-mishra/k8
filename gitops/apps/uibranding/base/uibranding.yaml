@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
        -  name : zero-uibranding
-          image: ghcr.io/manu-mishra/zero-uibranding:0.0.1888718140
+          image: ghcr.io/manu-mishra/zero-uibranding:0.0.1891334433 #1891334433  #1888718140
           imagePullPolicy: Always
           ports:
            -  containerPort: 80
