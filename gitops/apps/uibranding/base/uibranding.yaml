@@ -15,6 +15,7 @@ spec:
       labels:
         app: uibranding
         service: uibranding
+        version: uibranding
     spec:
       containers:
        -  name : zero-uibranding
